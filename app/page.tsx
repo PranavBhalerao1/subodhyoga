@@ -13,6 +13,7 @@ export default function Home() {
       <Hero
         title="Subodh Yoga"
         subtitle="Yoga Made Simpler!"
+        showCTA
       />
 
       {/* About Preview */}
