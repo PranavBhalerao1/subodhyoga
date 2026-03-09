@@ -45,6 +45,7 @@ const ContactForm = () => {
                 setStatus('idle');
             }
         } catch (error) {
+            console.error(error);
             alert('Oops! There was a problem submitting your form');
             setStatus('idle');
         }
