@@ -1,24 +1,43 @@
+import type { Metadata } from "next";
 import Section from '@/components/Section';
 import Link from 'next/link';
-import { posts } from '@/lib/posts';
 import { notFound } from 'next/navigation';
+import NotionContent from '@/components/NotionContent';
+import {
+    formatPostDate,
+    getPostBySlug,
+    getPublishedPosts,
+    getRecordMap,
+} from '@/lib/notion';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-    const post = posts.find((p) => p.slug === params.slug);
-    if (!post) return { title: "Post Not Found" };
+type BlogPostPageProps = {
+    params: { slug: string };
+};
+
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  return [];
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+    const post = await getPostBySlug(params.slug);
+    if (!post) return { title: "Post Not Found | Subodh Yoga" };
 
     return {
         title: `${post.title} | Subodh Yoga`,
-        description: post.preview,
+        description: post.summary || "Read this post on Subodh Yoga.",
     };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-    const post = posts.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+    const post = await getPostBySlug(params.slug);
 
     if (!post) {
         notFound();
     }
+
+    const recordMap = await getRecordMap(post.id);
 
     return (
         <article className="min-h-screen">
@@ -28,10 +47,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
-                        Back to Journal
+                        Back to Blog
                     </Link>
                     <p className="text-sm font-bold text-subodhOrange opacity-60 uppercase tracking-widest mb-6">
-                        {post.date}
+                        {formatPostDate(post.date)}
                     </p>
                     <h1 className="text-4xl md:text-5xl font-bold text-subodhBlue tracking-tight leading-tight">
                         {post.title}
@@ -40,11 +59,14 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
 
             <Section className="bg-white">
-                <div className="max-w-2xl mx-auto">
-                    <div
-                        className="prose prose-lg prose-slate max-w-none text-subodhText opacity-80 leading-relaxed space-y-8"
-                        dangerouslySetInnerHTML={{ __html: post.content }}
-                    />
+                <div className="max-w-3xl mx-auto">
+                    {post.summary && (
+                        <p className="text-subodhText opacity-75 text-lg mb-12">
+                            {post.summary}
+                        </p>
+                    )}
+
+                    <NotionContent recordMap={recordMap} />
 
                     <div className="mt-20 pt-12 border-t border-subodhBackground flex justify-between items-center">
                         <div className="flex gap-4">
