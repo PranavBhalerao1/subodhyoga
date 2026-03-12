@@ -6,7 +6,6 @@ import NotionContent from '@/components/NotionContent';
 import {
     formatPostDate,
     getPostBySlug,
-    getPublishedPosts,
     getRecordMap,
 } from '@/lib/notion';
 
