@@ -21,7 +21,7 @@ export default function Contact() {
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-subodhBlue mb-4">Send us a Message</h2>
                         <p className="text-subodhText opacity-70 leading-relaxed">
-                            Have a question about our classes or want to discuss private coaching? Fill out the form below and we&apos;ll get back to you as soon as possible.
+                            Have a question about our classes or want to know more about our services? Fill out the form below and we'll get back to you as soon as possible.
                         </p>
                     </div>
                     <ContactForm />
