@@ -1,5 +1,5 @@
 import Section from '@/components/Section';
-import Hero from '@/components/Hero';
+import PageHero from '@/components/PageHero';
 import BlogCard from '@/components/BlogCard';
 import { getPublishedPosts } from '@/lib/notion';
 
@@ -15,9 +15,10 @@ export default async function Blog() {
 
     return (
         <div>
-            <Hero
-                title="Blog"
-                subtitle="Insights on living a balanced and aware life."
+            <PageHero
+                eyebrow="Insights"
+                title="Our Blog"
+                description="Exploring the intersection of ancient wisdom and modern living through stories, guides, and community insights."
             />
 
             <Section className="bg-white">

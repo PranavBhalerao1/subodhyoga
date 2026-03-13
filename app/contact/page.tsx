@@ -1,5 +1,5 @@
 import Section from '@/components/Section';
-import Hero from '@/components/Hero';
+import PageHero from '@/components/PageHero';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
@@ -10,9 +10,10 @@ export const metadata = {
 export default function Contact() {
     return (
         <div>
-            <Hero
+            <PageHero
+                eyebrow="Connect"
                 title="Get in Touch"
-                subtitle="We&apos;re here to answer your questions and support your journey."
+                description="We're here to answer your questions and support your journey. Whether you're a beginner or returning to the mat."
             />
 
             <Section className="bg-white">

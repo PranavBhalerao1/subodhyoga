@@ -1,5 +1,5 @@
 import Section from '@/components/Section';
-import Hero from '@/components/Hero';
+import PageHero from '@/components/PageHero';
 
 export const metadata = {
     title: "About | Subodh Yoga",
@@ -9,9 +9,10 @@ export const metadata = {
 export default function About() {
     return (
         <div>
-            <Hero
-                title="Our Story"
-                subtitle="Bringing ancient wisdom to modern lives."
+            <PageHero
+                eyebrow="Our Journey"
+                title="About Subodh Yoga"
+                description="Bringing ancient wisdom to modern lives through authentic practice and community."
             />
 
             <Section className="bg-white">

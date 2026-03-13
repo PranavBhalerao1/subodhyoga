@@ -1,5 +1,5 @@
 import Section from '@/components/Section';
-import Hero from '@/components/Hero';
+import PageHero from '@/components/PageHero';
 
 export const metadata = {
     title: "Resources | Subodh Yoga",
@@ -32,9 +32,10 @@ export default function Resources() {
 
     return (
         <div>
-            <Hero
+            <PageHero
+                eyebrow="Library"
                 title="Resources"
-                subtitle="Tools and guides to support your practice at home."
+                description="A curated collection of guides, routines, and tools to support your mindfulness practice beyond the mat."
             />
 
             <Section className="bg-white">
