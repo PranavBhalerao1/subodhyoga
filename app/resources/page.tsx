@@ -12,7 +12,7 @@ export default function Resources() {
       title: "Surya Namaskars Tips",
       type: "PDF Guide",
       desc: "A downloadable resource with tips and guidance for practicing Surya Namaskars.",
-      href: "/surya-namaskars-tips.pdf",
+      href: "/Surya-Namaskars-Tips.pdf",
     },
   ];
 
