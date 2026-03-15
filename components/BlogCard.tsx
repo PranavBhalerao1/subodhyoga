@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface BlogCardProps {
     post: {
@@ -29,11 +30,12 @@ const BlogCard = ({ post }: BlogCardProps) => {
             className="group block bg-white rounded-2xl overflow-hidden border border-subodhBlue/5 transition-all hover:shadow-xl hover:shadow-subodhBlue/5 hover:-translate-y-1"
         >
             {post.thumbnail && (
-                <div className="aspect-[16/9] overflow-hidden bg-subodhBackground">
-                    <img
+                <div className="relative aspect-[16/9] overflow-hidden bg-subodhBackground">
+                    <Image
                         src={post.thumbnail}
                         alt={post.title}
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
                     />
                 </div>

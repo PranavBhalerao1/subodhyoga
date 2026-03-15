@@ -13,7 +13,7 @@ export default function Contact() {
             <PageHero
                 eyebrow="Connect"
                 title="Get in Touch"
-                description="We're here to answer your questions and support your journey. Whether you're a beginner or returning to the mat."
+                description="We&apos;re here to answer your questions and support your journey. Whether you&apos;re a beginner or returning to the mat."
             />
 
             <Section className="bg-white">
