@@ -16,27 +16,22 @@ export default function Home() {
         showCTA
       />
 
-      {/* About Preview */}
+      {/* Intro Video */}
       <Section
-        title="Discover Your Core"
-        subtitle="At Subodh Yoga, we believe yoga is a journey inward. Our practice focuses on the intersection of physical vitality and mental clarity."
+        title="What is Subodh Yoga?"
+        subtitle="Get a quick introduction to Subodh Yoga and our approach."
         className="bg-white"
       >
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1 space-y-6">
-            <h3 className="text-2xl font-bold text-subodhBlue">A Holistic Approach</h3>
-            <p className="text-subodhText opacity-80 leading-relaxed">
-              Founded on the principles of traditional wisdom and modern science, Subodh Yoga provides a sanctuary for individuals seeking to reconnect with their breath and body. Whether you are a beginner or a seasoned practitioner, our classes are designed to challenge you while providing the peace you need.
-            </p>
-            <Link href="/about" className="inline-block text-subodhOrange font-bold border-b-2 border-subodhOrange/20 hover:border-subodhOrange transition-all pb-1">
-              Learn more about our philosophy
-            </Link>
-          </div>
-          <div className="flex-1 bg-subodhBackground rounded-3xl aspect-[4/3] w-full flex items-center justify-center text-subodhOrange/20">
-            {/* Placeholder for an image */}
-            <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-            </svg>
+        <div className="max-w-4xl mx-auto">
+          <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ paddingTop: '56.25%' }}>
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/VWvo4CkoQGE"
+              title="What is Subodh Yoga?"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </div>
       </Section>
