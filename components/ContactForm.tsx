@@ -105,7 +105,7 @@ const ContactForm = () => {
                         />
                     </div>
                     <ReCAPTCHA
-                        sitekey="6LeKLIQsAAAAAH0h3m5eoZOU3dYWEbNrm8c2pzI1"
+                        sitekey="6LdhIo4sAAAAAMMQNqcBGXXjydOjKV7TQ8mGS3oDs"
                         onChange={(token: string | null) => setCaptchaToken(token)}
                     />
                     <button
