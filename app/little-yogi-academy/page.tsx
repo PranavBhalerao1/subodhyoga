@@ -83,11 +83,6 @@ const locations = [
     href: '/edison-nj',
     note: 'View schedule, pricing, and registration details for Edison.',
   },
-  {
-    label: 'Nashua, NH',
-    href: '/nashua-nh',
-    note: 'Explore program information for the Nashua center.',
-  },
 ];
 
 export default function LittleYogiAcademyPage() {
@@ -114,37 +109,28 @@ export default function LittleYogiAcademyPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-6xl">
-          <div className="mb-5 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-subodhOrange">
-              Choose a Location
-            </p>
-            <h2 className="mt-3 text-2xl font-bold text-subodhBlue sm:text-3xl">
-              Find Your Nearest Center
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mx-auto mt-8 max-w-6xl">
+          <div className="mx-auto w-full max-w-4xl">
             {locations.map((location) => (
               <Link
                 key={location.label}
                 href={location.href}
-                className="group rounded-[28px] border border-subodhBlue/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-subodhOrange/30 hover:shadow-xl"
+                className="group block rounded-[32px] border border-subodhBlue/10 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-subodhOrange/30 hover:shadow-xl sm:p-10 lg:p-12"
               >
-                <div className="flex h-full flex-col justify-between gap-6">
-                  <div>
-                    <span className="inline-flex rounded-full bg-subodhBackground px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-subodhOrange">
+                <div className="flex h-full flex-col justify-between gap-6 text-center">
+                  <div className="flex flex-col items-center">
+                    <span className="inline-flex rounded-full bg-subodhBackground px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-subodhOrange">
                       Center Location
                     </span>
-                    <h3 className="mt-5 text-3xl font-bold text-subodhBlue">
+                    <h3 className="mt-5 text-3xl font-bold text-subodhBlue sm:text-4xl">
                       {location.label}
                     </h3>
-                    <p className="mt-4 max-w-md leading-7 text-subodhText/75">
+                    <p className="mt-4 max-w-2xl text-base leading-8 text-subodhText/75 sm:text-lg">
                       {location.note}
                     </p>
                   </div>
 
-                  <div className="inline-flex items-center text-base font-semibold text-subodhOrange transition group-hover:text-subodhBlue">
+                  <div className="inline-flex items-center self-center text-lg font-semibold text-subodhOrange transition group-hover:text-subodhBlue">
                     View Details
                     <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
                       →
@@ -278,3 +264,4 @@ export default function LittleYogiAcademyPage() {
     </div>
   );
 }
+
