@@ -11,6 +11,7 @@ const AdultRegistrationForm = () => {
     experienceLevel: '',
     interest: '',
     healthNotes: '',
+    waiverAgreed: false,
   });
 
   const [status, setStatus] = useState<'idle' | 'success' | 'loading'>('idle');
@@ -48,6 +49,7 @@ const AdultRegistrationForm = () => {
           experienceLevel: '',
           interest: '',
           healthNotes: '',
+          waiverAgreed: false,
         });
         setCaptchaToken(null);
         setTimeout(() => setStatus('idle'), 5000);
@@ -185,6 +187,41 @@ const AdultRegistrationForm = () => {
               onChange={(e) => setFormData({ ...formData, healthNotes: e.target.value })}
               className="w-full resize-y rounded-xl border border-gray-200 px-4 py-3 text-subodhText outline-none transition focus:border-subodhOrange focus:ring-2 focus:ring-subodhOrange/20"
             />
+          </div>
+
+          <div>
+            <label className="mb-2 block text-sm font-semibold text-subodhBlue">
+              Waiver
+            </label>
+            <div className="mb-3 max-h-24 overflow-y-auto rounded-xl border border-gray-200 px-4 py-3 text-sm text-subodhText space-y-3">
+              <p>
+                I, the undersigned, hereby consent to participate in the yoga classes organized by Subodh Yoga,
+                Inc., and led by its certified yoga instructors. I understand that yoga involves physical
+                movement and exercise, which may include stretching, balancing, and other forms of physical
+                exertion. I acknowledge that participation in yoga classes carries inherent risks of injury,
+                including but not limited to muscle strain, joint injury, and in rare cases, more serious
+                injury. I voluntarily assume all risks associated with my participation in these yoga classes.
+              </p>
+              <p className="font-semibold">I agree to the following:</p>
+              <p><span className="font-semibold">1. Health and Medical Conditions:</span> I understand that it is my responsibility to consult with a physician prior to participating in any yoga class, particularly if I have any pre-existing medical conditions, injuries, or health concerns. I confirm that I am physically fit to participate in yoga and will notify the instructor of any medical conditions or limitations that may affect my participation.</p>
+              <p><span className="font-semibold">2. Assumption of Risk:</span> I fully accept and assume all risks related to participation in the yoga classes, whether caused by the actions, inactions, or negligence of Subodh Yoga, Inc., its instructors, or otherwise.</p>
+              <p><span className="font-semibold">3. Release of Liability:</span> I hereby release, discharge, and hold harmless Subodh Yoga, Inc., its instructors, staff, and volunteers from any and all claims, demands, damages, and liabilities arising from my participation in the yoga classes. This release includes, but is not limited to, any injuries, illnesses, or losses that I may sustain during or after the class.</p>
+              <p><span className="font-semibold">4. Emergency Medical Treatment:</span> In the event of a medical emergency, I authorize the instructors or staff to obtain necessary medical treatment on my behalf. I understand that any medical expenses incurred will be my responsibility.</p>
+              <p><span className="font-semibold">5. Photography and Media Release:</span> I grant permission to Subodh Yoga, Inc. to take photographs or videos of me during the yoga classes. I understand that these may be used for promotional purposes, including but not limited to website content, social media, and marketing materials.</p>
+              <p><span className="font-semibold">6. Agreement to Abide by Class Guidelines:</span> I agree to follow the instructions provided by the yoga instructor and respect the safety and well-being of other participants. I will not hold Subodh Yoga, Inc. liable for any injury caused by my own negligence or failure to follow instructions.</p>
+            </div>
+            <label htmlFor="waiverAgreed" className="flex items-start gap-3 text-sm text-subodhText">
+              <input
+                id="waiverAgreed"
+                name="waiverAgreed"
+                type="checkbox"
+                required
+                checked={formData.waiverAgreed}
+                onChange={(e) => setFormData({ ...formData, waiverAgreed: e.target.checked })}
+                className="mt-1 h-4 w-4 rounded border-gray-300 text-subodhOrange focus:ring-subodhOrange/40"
+              />
+              <span>I have read and agree to the waiver.</span>
+            </label>
           </div>
 
           <div className="flex justify-center">
